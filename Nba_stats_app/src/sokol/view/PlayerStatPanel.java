@@ -36,56 +36,51 @@ public class PlayerStatPanel extends javax.swing.JPanel {
 
     private ObradaPlayerStats obrada;
     private ObradaPlayer obrada1;
-   // final private DecimalFormat df;
+    // final private DecimalFormat df;
     private PlayerStats playerStats;
     private Player player;
-
 
     public PlayerStatPanel() {
         initComponents();
         setName("Player stats");
         obrada = new ObradaPlayerStats();
-        obrada1= new ObradaPlayer();
+        obrada1 = new ObradaPlayer();
         //ucitajStatistiku();
         ucitajStatistiku1();
 
-       // String pattern = "###,###.###";
-    // df = new DecimalFormat(pattern);
+        // String pattern = "###,###.###";
+        // df = new DecimalFormat(pattern);
         //NumberFormat nf = NumberFormat.getNumberInstance(new Locale("hr", "HR"));
-       // df = (DecimalFormat) nf;
+        // df = (DecimalFormat) nf;
         //df.applyPattern("###.#");
-
     }
 
     private void ucitajStatistiku() {
-        
+
         Player igrac = lstPlayer.getSelectedValue();
 
         DefaultListModel<PlayerStats> m = new DefaultListModel<>();
 
-        if (igrac != null){
-            int idNba_igrac_selected =  lstPlayer.getSelectedValue().getIdNba();
-            obrada.getEntiteti().forEach((s) -> {                
-                if (s.getPlayers() != null && s.getPlayers().getIdNba()==idNba_igrac_selected){
+        if (igrac != null) {
+            int idNba_igrac_selected = lstPlayer.getSelectedValue().getIdNba();
+            obrada.getEntiteti().forEach((s) -> {
+                if (s.getPlayers() != null && s.getPlayers().getIdNba() == idNba_igrac_selected) {
                     m.addElement(s);
                 }
             });
         }
         lstPlayerStats.setModel(m);
     }
-    
-     private void ucitajStatistiku1() {
+
+    private void ucitajStatistiku1() {
 
         DefaultListModel<Player> m = new DefaultListModel<>();
         obrada1.getEntiteti(txtUvjet.getText()).forEach((s) -> {
             m.addElement(s);
         });
         lstPlayer.setModel(m);
-        
+
     }
-       
-
-
 
     private void ocistiPolja() {
 
@@ -146,8 +141,6 @@ public class PlayerStatPanel extends javax.swing.JPanel {
         return true;
 
     }
-    
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -382,9 +375,14 @@ public class PlayerStatPanel extends javax.swing.JPanel {
     private void btnDodajNoviActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDodajNoviActionPerformed
 
         playerStats = new PlayerStats();
- 
+        player = lstPlayer.getSelectedValue();
         // player = izvlaci player iz lst-Players....
-        
+        if (player == null) {
+            JOptionPane.showMessageDialog(getRootPane(), "There is no player selected");
+            return;
+        }
+
+        // player = izvlaci player iz lst-Players....
         // if player is null -> reject: 1. poruka, 2. return
         playerStats.setPlayers(player);
 
@@ -448,19 +446,16 @@ public class PlayerStatPanel extends javax.swing.JPanel {
             return;
         }
         ocistiPolja();
-        
-        
-        
-       txtFg2ptmade.setText(playerStats.getFg2ptatt().toString());
+
+        txtFg2ptmade.setText(playerStats.getFg2ptatt().toString());
         txtFg2patt.setText(playerStats.getFg2ptatt().toString());
         txtFg3ptatt.setText(playerStats.getFg3ptatt().toString());
         txtFg3ptmade.setText(playerStats.getFg3ptmade().toString());
         txtFtatt.setText(playerStats.getFtatt().toString());
         txtFtmade.setText(playerStats.getFtmade().toString());
         txtGamesPlayed.setText(playerStats.getGamesplayed().toString());
-        
-        
-       
+
+
     }//GEN-LAST:event_lstPlayerStatsValueChanged
 
     private void btnTraziActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTraziActionPerformed
