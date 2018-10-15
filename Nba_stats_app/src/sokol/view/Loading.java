@@ -59,7 +59,7 @@ public class Loading extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
 
-        lblSLika.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sokol/view/ucitanje.gif"))); // NOI18N
+        lblSLika.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sokol/view/basketballloading.gif"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
