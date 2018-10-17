@@ -8,6 +8,7 @@ import javax.swing.UIManager;
 import sokol.pomocno.PocetniInsert;
 import sokol.view.Loading;
 
+
 //upogoniti Hibernate prateći https://examples.javacodegeeks.com/enterprise-java/hibernate/hibernate-maven-example/
 public class Start {
 
