@@ -5,15 +5,37 @@ import java.math.BigInteger;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Game extends Entitet implements Serializable {
 
    private Date dateofgame;
+   private String homeTeamPoints;
+   private String awayTeamPoints;
     @ManyToOne
     private NbaTeam hometeam;
     @ManyToOne
     private NbaTeam awayteam;
+    
+
+    public String getHomeTeamPoints() {
+        return homeTeamPoints;
+    }
+
+    public void setHomeTeamPoints(String homeTeamPoints) {
+        this.homeTeamPoints = homeTeamPoints;
+    }
+
+    public String getAwayTeamPoints() {
+        return awayTeamPoints;
+    }
+
+    public void setAwayTeamPoints(String awayTeamPoints) {
+        this.awayTeamPoints = awayTeamPoints;
+    }
+    
+    
 
     public Date getDateofgame() {
         return dateofgame;
@@ -37,6 +59,11 @@ public class Game extends Entitet implements Serializable {
 
     public void setAwayteam(NbaTeam awayteam) {
         this.awayteam = awayteam;
+    }
+
+    @Override
+    public String toString() {
+        return this.hometeam.getName() + " - " + this.awayteam.getName() + " (" + this.homeTeamPoints + " / " + this.awayTeamPoints + ")";
     }
 
     @Override

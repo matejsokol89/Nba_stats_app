@@ -181,36 +181,30 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="btnOperators" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace pref="24" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="btnOperators" max="32767" attributes="0"/>
                           <Component id="btnPlayerStats" alignment="0" max="32767" attributes="0"/>
                           <Component id="btnPlayers" alignment="0" max="32767" attributes="0"/>
                           <Component id="btnNbaTeams" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btnPocetna" alignment="0" max="32767" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                              <Component id="jLabel1" min="-2" pref="256" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="btnGames" max="32767" attributes="0"/>
+                          <Component id="btnGames" alignment="1" min="-2" pref="308" max="-2" attributes="0"/>
                       </Group>
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="24" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" pref="217" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                  <Component id="btnPocetna" min="-2" pref="37" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                   <Component id="btnNbaTeams" min="-2" pref="37" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="btnPlayers" min="-2" pref="37" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="btnPlayerStats" min="-2" pref="37" max="-2" attributes="0"/>
@@ -218,20 +212,12 @@
                   <Component id="btnGames" min="-2" pref="37" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="btnOperators" min="-2" pref="37" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="92" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="btnPocetna">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Izbornik"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPocetnaActionPerformed"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JButton" name="btnNbaTeams">
           <Properties>
             <Property name="text" type="java.lang.String" value="Nba teams"/>
@@ -258,7 +244,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnGames">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Games"/>
+            <Property name="text" type="java.lang.String" value="Game"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGamesActionPerformed"/>
@@ -266,7 +252,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnOperators">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Operators"/>
+            <Property name="text" type="java.lang.String" value="Era dijagram"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOperatorsActionPerformed"/>

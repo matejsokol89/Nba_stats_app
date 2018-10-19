@@ -19,6 +19,9 @@ public  class NbaTeam extends Entitet implements Serializable {
     private String name;
     private String city;
     private String teamId;
+    
+
+
 
     public String getTeamId() {
         return teamId;

@@ -5,7 +5,6 @@ package sokol;
 
 import de.javasoft.plaf.synthetica.SyntheticaSkyMetallicLookAndFeel;
 import javax.swing.UIManager;
-import sokol.pomocno.PocetniInsert;
 import sokol.view.Loading;
 
 

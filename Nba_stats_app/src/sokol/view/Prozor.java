@@ -152,7 +152,6 @@ public class Prozor extends javax.swing.JFrame {
     private void initComponents() {
 
         pnlIzbornik = new javax.swing.JPanel();
-        btnPocetna = new javax.swing.JButton();
         btnNbaTeams = new javax.swing.JButton();
         btnPlayerStats = new javax.swing.JButton();
         btnPlayers = new javax.swing.JButton();
@@ -185,13 +184,6 @@ public class Prozor extends javax.swing.JFrame {
             }
         });
 
-        btnPocetna.setText("Izbornik");
-        btnPocetna.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPocetnaActionPerformed(evt);
-            }
-        });
-
         btnNbaTeams.setText("Nba teams");
         btnNbaTeams.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -213,14 +205,14 @@ public class Prozor extends javax.swing.JFrame {
             }
         });
 
-        btnGames.setText("Games");
+        btnGames.setText("Game");
         btnGames.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGamesActionPerformed(evt);
             }
         });
 
-        btnOperators.setText("Operators");
+        btnOperators.setText("Era dijagram");
         btnOperators.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnOperatorsActionPerformed(evt);
@@ -233,31 +225,26 @@ public class Prozor extends javax.swing.JFrame {
         pnlIzbornik.setLayout(pnlIzbornikLayout);
         pnlIzbornikLayout.setHorizontalGroup(
             pnlIzbornikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlIzbornikLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnlIzbornikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnOperators, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(pnlIzbornikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(btnPlayerStats, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnPlayers, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnNbaTeams, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnPocetna, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlIzbornikLayout.createSequentialGroup()
-                            .addGap(52, 52, 52)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(btnGames, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(24, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlIzbornikLayout.createSequentialGroup()
+                .addContainerGap(24, Short.MAX_VALUE)
+                .addGroup(pnlIzbornikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlIzbornikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(btnOperators, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnPlayerStats, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnPlayers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnNbaTeams, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnGames, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1))
+                .addContainerGap())
         );
         pnlIzbornikLayout.setVerticalGroup(
             pnlIzbornikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlIzbornikLayout.createSequentialGroup()
-                .addGap(34, 34, 34)
+                .addGap(29, 29, 29)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
-                .addComponent(btnPocetna, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(32, 32, 32)
                 .addComponent(btnNbaTeams, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnPlayers, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnPlayerStats, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -265,7 +252,7 @@ public class Prozor extends javax.swing.JFrame {
                 .addComponent(btnGames, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnOperators, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(92, Short.MAX_VALUE))
         );
 
         pnlSadrzaj.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -419,10 +406,6 @@ public class Prozor extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnPocetnaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPocetnaActionPerformed
-        postaviPanel(pnlPocetna);
-    }//GEN-LAST:event_btnPocetnaActionPerformed
-
     private void btnNbaTeamsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNbaTeamsActionPerformed
         postaviPanel(pnlNbaTeams);
     }//GEN-LAST:event_btnNbaTeamsActionPerformed
@@ -545,6 +528,7 @@ public class Prozor extends javax.swing.JFrame {
                     firstPlayer.setLastname(player.getLastName());
                     firstPlayer.setJerseynumber(player.getJersey());
                     firstPlayer.setPosition(player.getPos());
+                    firstPlayer.setPersonId(player.getPersonId());
 
                     firstPlayer = obradaPlayer.dodaj(firstPlayer);
 
@@ -701,9 +685,7 @@ public class Prozor extends javax.swing.JFrame {
         resetPozadinaButton();
 
         switch (panel.getName()) {
-            case "Menu":
-                btnPocetna.setBackground(Color.GREEN);
-                break;
+
             case "Nba teams":
                 btnNbaTeams.setBackground(Color.GREEN);
                 break;
@@ -730,7 +712,6 @@ public class Prozor extends javax.swing.JFrame {
     private javax.swing.JButton btnOperators;
     private javax.swing.JButton btnPlayerStats;
     private javax.swing.JButton btnPlayers;
-    private javax.swing.JButton btnPocetna;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;

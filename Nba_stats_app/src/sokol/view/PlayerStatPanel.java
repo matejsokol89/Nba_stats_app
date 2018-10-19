@@ -62,9 +62,9 @@ public class PlayerStatPanel extends javax.swing.JPanel {
         DefaultListModel<PlayerStats> m = new DefaultListModel<>();
 
         if (igrac != null) {
-            int idNba_igrac_selected = lstPlayer.getSelectedValue().getIdNba();
+            int idNbaPlayerSelected = lstPlayer.getSelectedValue().getIdNba();
             obrada.getEntiteti().forEach((s) -> {
-                if (s.getPlayers() != null && s.getPlayers().getIdNba() == idNba_igrac_selected) {
+                if (s.getPlayers() != null && s.getPlayers().getIdNba() == idNbaPlayerSelected) {
                     m.addElement(s);
                 }
             });
@@ -94,39 +94,39 @@ public class PlayerStatPanel extends javax.swing.JPanel {
     private boolean popuniSvojstva() {
 
         try {
-            playerStats.setFg2ptatt(new BigDecimal(txtFg2patt.getText()));
+            playerStats.setMinutes(new BigDecimal(txtMin.getText()));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(getRootPane(), "Has to be a number");
             return false;
         }
 
         try {
-            playerStats.setFg2ptmade(new BigDecimal(txtFg2ptmade.getText()));
+            playerStats.setPts(new BigDecimal(txtPoints.getText()));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(getRootPane(), "Has to be a number");
             return false;
         }
 
         try {
-            playerStats.setFg3ptatt(new BigDecimal(txtFg3ptatt.getText()));
+            playerStats.setReb(new BigDecimal(txtRebound.getText()));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(getRootPane(), "Has to be a number");
             return false;
         }
         try {
-            playerStats.setFg3ptmade(new BigDecimal(txtFg3ptmade.getText()));
+            playerStats.setAst(new BigDecimal(txtAssist.getText()));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(getRootPane(), "Has to be a number");
             return false;
         }
         try {
-            playerStats.setFtatt(new BigDecimal(txtFtatt.getText()));
+            playerStats.setBlk(new BigDecimal(txtBlock.getText()));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(getRootPane(), "Has to be a number");
             return false;
         }
         try {
-            playerStats.setFtmade(new BigDecimal(txtFtmade.getText()));
+            playerStats.setStl(new BigDecimal(txtSteal.getText()));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(getRootPane(), "Has to be a number");
             return false;
@@ -155,19 +155,19 @@ public class PlayerStatPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         txtGamesPlayed = new javax.swing.JTextField();
         labela1 = new javax.swing.JLabel();
-        txtFg2patt = new javax.swing.JTextField();
+        txtMin = new javax.swing.JTextField();
         labela2 = new javax.swing.JLabel();
-        txtFg2ptmade = new javax.swing.JTextField();
+        txtPoints = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        txtFg3ptatt = new javax.swing.JTextField();
+        txtRebound = new javax.swing.JTextField();
         btnObrisi = new javax.swing.JButton();
         btnPromjena = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        txtFg3ptmade = new javax.swing.JTextField();
+        txtAssist = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        txtFtatt = new javax.swing.JTextField();
+        txtBlock = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        txtFtmade = new javax.swing.JTextField();
+        txtSteal = new javax.swing.JTextField();
         btnDodajNovi = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         txtUvjet = new javax.swing.JTextField();
@@ -181,11 +181,11 @@ public class PlayerStatPanel extends javax.swing.JPanel {
 
         jLabel1.setText("Games played");
 
-        labela1.setText("fg2ptatt");
+        labela1.setText("Minutes");
 
-        labela2.setText("fg2ptmade");
+        labela2.setText("Points");
 
-        jLabel4.setText("fg3ptatt");
+        jLabel4.setText("Rebounds");
 
         btnObrisi.setText("Delete");
         btnObrisi.addActionListener(new java.awt.event.ActionListener() {
@@ -201,11 +201,11 @@ public class PlayerStatPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel5.setText("fg3ptmade");
+        jLabel5.setText("Assists");
 
-        jLabel7.setText("ftatt");
+        jLabel7.setText("Blocks");
 
-        jLabel8.setText("ftmade");
+        jLabel8.setText("Steals");
 
         btnDodajNovi.setText("Add new");
         btnDodajNovi.addActionListener(new java.awt.event.ActionListener() {
@@ -221,35 +221,30 @@ public class PlayerStatPanel extends javax.swing.JPanel {
             .addGroup(pnlPodaciLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlPodaciLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlPodaciLayout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addContainerGap(63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtBlock)
+                    .addComponent(txtGamesPlayed)
+                    .addComponent(txtMin)
+                    .addComponent(txtPoints)
+                    .addComponent(txtRebound)
+                    .addComponent(txtAssist)
+                    .addComponent(txtSteal)
                     .addGroup(pnlPodaciLayout.createSequentialGroup()
                         .addGroup(pnlPodaciLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtFtatt)
-                            .addComponent(txtGamesPlayed)
-                            .addComponent(txtFg2patt)
-                            .addComponent(txtFg2ptmade)
-                            .addComponent(txtFg3ptatt)
-                            .addComponent(txtFg3ptmade)
-                            .addComponent(txtFtmade)
-                            .addGroup(pnlPodaciLayout.createSequentialGroup()
-                                .addGroup(pnlPodaciLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(labela2)
-                                    .addComponent(labela1)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel8))
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addContainerGap())
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel1)
+                            .addComponent(labela2)
+                            .addComponent(labela1)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel8))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(pnlPodaciLayout.createSequentialGroup()
-                        .addComponent(btnDodajNovi, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnDodajNovi, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnPromjena)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnObrisi, javax.swing.GroupLayout.DEFAULT_SIZE, 76, Short.MAX_VALUE)
-                        .addGap(14, 14, 14))))
+                        .addComponent(btnObrisi, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         pnlPodaciLayout.setVerticalGroup(
             pnlPodaciLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -261,27 +256,27 @@ public class PlayerStatPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(labela1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtFg2patt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtMin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labela2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtFg2ptmade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtPoints, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtFg3ptatt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtRebound, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtFg3ptmade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtAssist, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel7)
                 .addGap(8, 8, 8)
-                .addComponent(txtFtatt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtBlock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel8)
                 .addGap(8, 8, 8)
-                .addComponent(txtFtmade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtSteal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addGroup(pnlPodaciLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnPromjena)
@@ -332,20 +327,20 @@ public class PlayerStatPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtUvjet, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(7, 7, 7)
+                                .addComponent(txtUvjet, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnTrazi))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(pnlPodaci, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(237, Short.MAX_VALUE))
+                .addContainerGap(93, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(28, 28, 28)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(502, Short.MAX_VALUE)))
+                    .addContainerGap(365, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -447,12 +442,12 @@ public class PlayerStatPanel extends javax.swing.JPanel {
         }
         ocistiPolja();
 
-        txtFg2ptmade.setText(playerStats.getFg2ptatt().toString());
-        txtFg2patt.setText(playerStats.getFg2ptatt().toString());
-        txtFg3ptatt.setText(playerStats.getFg3ptatt().toString());
-        txtFg3ptmade.setText(playerStats.getFg3ptmade().toString());
-        txtFtatt.setText(playerStats.getFtatt().toString());
-        txtFtmade.setText(playerStats.getFtmade().toString());
+        txtPoints.setText(playerStats.getPts().toString());
+        txtMin.setText(playerStats.getMinutes().toString());
+        txtRebound.setText(playerStats.getReb().toString());
+        txtAssist.setText(playerStats.getAst().toString());
+        txtBlock.setText(playerStats.getBlk().toString());
+        txtSteal.setText(playerStats.getBlk(  ).toString());
         txtGamesPlayed.setText(playerStats.getGamesplayed().toString());
 
 
@@ -486,13 +481,13 @@ public class PlayerStatPanel extends javax.swing.JPanel {
     protected javax.swing.JList<Player> lstPlayer;
     protected javax.swing.JList<PlayerStats> lstPlayerStats;
     protected javax.swing.JPanel pnlPodaci;
-    protected javax.swing.JTextField txtFg2patt;
-    protected javax.swing.JTextField txtFg2ptmade;
-    protected javax.swing.JTextField txtFg3ptatt;
-    protected javax.swing.JTextField txtFg3ptmade;
-    protected javax.swing.JTextField txtFtatt;
-    protected javax.swing.JTextField txtFtmade;
+    protected javax.swing.JTextField txtAssist;
+    protected javax.swing.JTextField txtBlock;
     protected javax.swing.JTextField txtGamesPlayed;
+    protected javax.swing.JTextField txtMin;
+    protected javax.swing.JTextField txtPoints;
+    protected javax.swing.JTextField txtRebound;
+    protected javax.swing.JTextField txtSteal;
     protected javax.swing.JTextField txtUvjet;
     // End of variables declaration//GEN-END:variables
 }

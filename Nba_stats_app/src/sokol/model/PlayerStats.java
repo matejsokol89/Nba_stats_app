@@ -13,12 +13,12 @@ import javax.persistence.OneToOne;
 public class PlayerStats extends Entitet implements Serializable {
 
     private BigDecimal gamesplayed;
-    private BigDecimal fg2ptatt;
-    private BigDecimal fg2ptmade;
-    private BigDecimal fg3ptatt;
-    private BigDecimal fg3ptmade;
-    private BigDecimal ftatt;
-    private BigDecimal ftmade;
+    private BigDecimal minutes;
+    private BigDecimal pts;
+    private BigDecimal reb;
+    private BigDecimal ast;
+    private BigDecimal stl;
+    private BigDecimal blk;
     private BigDecimal player;
 //game int not null
     @OneToOne 
@@ -54,7 +54,6 @@ public class PlayerStats extends Entitet implements Serializable {
     public void setGame(Game game) {
         this.game = game;
     }
-    
 
     public BigDecimal getGamesplayed() {
         return gamesplayed;
@@ -64,53 +63,56 @@ public class PlayerStats extends Entitet implements Serializable {
         this.gamesplayed = gamesplayed;
     }
 
-    public BigDecimal getFg2ptatt() {
-        return fg2ptatt;
+    public BigDecimal getMinutes() {
+        return minutes;
     }
 
-    public void setFg2ptatt(BigDecimal fg2ptatt) {
-        this.fg2ptatt = fg2ptatt;
+    public void setMinutes(BigDecimal minutes) {
+        this.minutes = minutes;
     }
 
-    public BigDecimal getFg2ptmade() {
-        return fg2ptmade;
+    public BigDecimal getPts() {
+        return pts;
     }
 
-    public void setFg2ptmade(BigDecimal fg2ptmade) {
-        this.fg2ptmade = fg2ptmade;
+    public void setPts(BigDecimal pts) {
+        this.pts = pts;
     }
 
-    public BigDecimal getFg3ptatt() {
-        return fg3ptatt;
+    public BigDecimal getReb() {
+        return reb;
     }
 
-    public void setFg3ptatt(BigDecimal fg3ptatt) {
-        this.fg3ptatt = fg3ptatt;
+    public void setReb(BigDecimal reb) {
+        this.reb = reb;
     }
 
-    public BigDecimal getFg3ptmade() {
-        return fg3ptmade;
+    public BigDecimal getAst() {
+        return ast;
     }
 
-    public void setFg3ptmade(BigDecimal fg3ptmade) {
-        this.fg3ptmade = fg3ptmade;
+    public void setAst(BigDecimal ast) {
+        this.ast = ast;
     }
 
-    public BigDecimal getFtatt() {
-        return ftatt;
+    public BigDecimal getStl() {
+        return stl;
     }
 
-    public void setFtatt(BigDecimal ftatt) {
-        this.ftatt = ftatt;
+    public void setStl(BigDecimal stl) {
+        this.stl = stl;
     }
 
-    public BigDecimal getFtmade() {
-        return ftmade;
+    public BigDecimal getBlk() {
+        return blk;
     }
 
-    public void setFtmade(BigDecimal ftmade) {
-        this.ftmade = ftmade;
+    public void setBlk(BigDecimal blk) {
+        this.blk = blk;
     }
+    
+
+   
 
     public BigDecimal getPlayer() {
         return player;
@@ -122,13 +124,13 @@ public class PlayerStats extends Entitet implements Serializable {
 
     @Override
     public String toString() {
-        return getFg2ptatt() + ", " + getFg2ptmade();
+        return getPts()+ " points " + " ," + getReb()+ " rebounds " + getAst() + " assists" ;
     }
     
     @Override
     public String getCSV() {
-        return getFg2ptatt()+ "\t" + getFg2ptmade()+ "\t" + getFg3ptatt()+ "\t" + getFg3ptmade()
-                + getFtatt()+ "\t" + getFtmade()+ "\t" + getGame()+ "\t" + getGamesplayed();
+        return getAst()+ "\t" + getBlk()+ "\t" + getMinutes()+ "\t" + getPts()
+                + getReb()+ "\t" + getStl()+ "\t" + getGame()+ "\t" + getGamesplayed();
     }
 
 

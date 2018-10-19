@@ -26,10 +26,10 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="txtUvjet" min="-2" pref="76" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="txtUvjet" min="-2" pref="100" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="btnTrazi" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -41,13 +41,13 @@
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="pnlPodaci" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="237" max="32767" attributes="0"/>
+              <EmptySpace pref="93" max="32767" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                   <Component id="jScrollPane2" min="-2" pref="217" max="-2" attributes="0"/>
-                  <EmptySpace pref="502" max="32767" attributes="0"/>
+                  <EmptySpace pref="365" max="32767" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -93,42 +93,34 @@
               <Group type="102" attributes="0">
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="63" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="txtBlock" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtGamesPlayed" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtMin" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtPoints" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtRebound" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtAssist" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtSteal" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtFtatt" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtGamesPlayed" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtFg2patt" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtFg2ptmade" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtFg3ptatt" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtFg3ptmade" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtFtmade" alignment="0" max="32767" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="labela2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="labela1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="labela2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="labela1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="btnDodajNovi" min="-2" pref="75" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btnDodajNovi" pref="82" max="32767" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="btnPromjena" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnObrisi" pref="76" max="32767" attributes="0"/>
-                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                          <Component id="btnObrisi" min="-2" pref="76" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -142,27 +134,27 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="labela1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="txtFg2patt" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtMin" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="labela2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="txtFg2ptmade" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtPoints" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="txtFg3ptatt" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtRebound" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="txtFg3ptmade" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtAssist" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                  <Component id="txtFtatt" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtBlock" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                  <Component id="txtFtmade" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtSteal" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="18" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnPromjena" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -184,24 +176,24 @@
         </Component>
         <Component class="javax.swing.JLabel" name="labela1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="fg2ptatt"/>
+            <Property name="text" type="java.lang.String" value="Minutes"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtFg2patt">
+        <Component class="javax.swing.JTextField" name="txtMin">
         </Component>
         <Component class="javax.swing.JLabel" name="labela2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="fg2ptmade"/>
+            <Property name="text" type="java.lang.String" value="Points"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtFg2ptmade">
+        <Component class="javax.swing.JTextField" name="txtPoints">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
-            <Property name="text" type="java.lang.String" value="fg3ptatt"/>
+            <Property name="text" type="java.lang.String" value="Rebounds"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtFg3ptatt">
+        <Component class="javax.swing.JTextField" name="txtRebound">
         </Component>
         <Component class="javax.swing.JButton" name="btnObrisi">
           <Properties>
@@ -221,24 +213,24 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
-            <Property name="text" type="java.lang.String" value="fg3ptmade"/>
+            <Property name="text" type="java.lang.String" value="Assists"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtFg3ptmade">
+        <Component class="javax.swing.JTextField" name="txtAssist">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel7">
           <Properties>
-            <Property name="text" type="java.lang.String" value="ftatt"/>
+            <Property name="text" type="java.lang.String" value="Blocks"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtFtatt">
+        <Component class="javax.swing.JTextField" name="txtBlock">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">
           <Properties>
-            <Property name="text" type="java.lang.String" value="ftmade"/>
+            <Property name="text" type="java.lang.String" value="Steals"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtFtmade">
+        <Component class="javax.swing.JTextField" name="txtSteal">
         </Component>
         <Component class="javax.swing.JButton" name="btnDodajNovi">
           <Properties>

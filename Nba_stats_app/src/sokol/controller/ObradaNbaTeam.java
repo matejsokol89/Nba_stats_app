@@ -70,7 +70,7 @@ public List<NbaTeam> getEntiteti(){
 
     private void kontrolaObaveznoVrijednost(NbaTeam nt) throws NbaException {
         if(nt.getName()==null || nt.getName().isEmpty()){
-            throw new NbaException("Naziv obavezno");
+            throw new NbaException("Name required");
         }
     }
 
@@ -85,7 +85,7 @@ public List<NbaTeam> getEntiteti(){
 
     private void kontrolaNeViseOd50Znakova(NbaTeam nt) throws NbaException{
         if(nt.getName().length()>50){
-            throw new NbaException("Naziv ne smije imati više od 50 znakova");
+            throw new NbaException("Name to long");
         }
     }
     

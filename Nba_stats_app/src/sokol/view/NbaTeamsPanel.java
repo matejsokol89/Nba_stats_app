@@ -97,7 +97,7 @@ public class NbaTeamsPanel extends javax.swing.JPanel {
 
         jLabel2.setText("City");
 
-        btnDodajNovi.setText("Add new");
+        btnDodajNovi.setText("Add ");
         btnDodajNovi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDodajNoviActionPerformed(evt);
@@ -126,8 +126,8 @@ public class NbaTeamsPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(pnlPodaciLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlPodaciLayout.createSequentialGroup()
-                        .addComponent(btnDodajNovi)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                        .addComponent(btnDodajNovi, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
                         .addComponent(btnPromjena)
                         .addGap(27, 27, 27)
                         .addComponent(btnObrisi))

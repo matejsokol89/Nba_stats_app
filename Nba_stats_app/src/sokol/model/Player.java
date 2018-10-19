@@ -18,6 +18,15 @@ public class Player extends Entitet implements Serializable {
     private String lastname;
     private String jerseynumber;
     private String position;
+    private String personId;
+
+    public String getPersonId() {
+        return personId;
+    }
+
+    public void setPersonId(String personId) {
+        this.personId = personId;
+    }
 
     @ManyToOne
     private NbaTeam nbaTeam;
