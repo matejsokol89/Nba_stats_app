@@ -9,9 +9,10 @@ import com.github.lgooddatepicker.components.CalendarPanel;
 import com.github.lgooddatepicker.components.DatePicker;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -20,16 +21,12 @@ import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import sokol.controller.ObradaGame;
 import sokol.controller.ObradaNbaTeam;
 import sokol.model.Game;
 import sokol.model.NbaTeam;
-import sokol.model.Player;
-import sokol.model.PlayerStats;
 import sokol.pomocno.HibernateUtil;
 import sokol.pomocno.NbaException;
 
@@ -60,9 +57,9 @@ public class GamePanel extends javax.swing.JPanel {
         calendarPanel = new CalendarPanel(datePicker);
 
         Dimension d = calendarPanel.getPreferredSize();
-        pnlKalendar.setSize(d);
-        calendarPanel.setSize(pnlKalendar.getSize());
-        pnlKalendar.add(calendarPanel);
+        pnlKalendar1.setSize(d);
+        calendarPanel.setSize(pnlKalendar1.getSize());
+        pnlKalendar1.add(calendarPanel);
     }
 
     private void ucitajHomeTeam() {
@@ -74,8 +71,9 @@ public class GamePanel extends javax.swing.JPanel {
     }
 
     private void ucitajKalendar() {
-    
 
+        Date d = Date.from(datePicker.getDate().atStartOfDay(ZoneId.systemDefault()).toInstant());
+        game.setDateofgame(d);
         if (game.getDateofgame() == null) {
             datePicker.setDateToToday();
             calendarPanel.setSelectedDate(datePicker.getDate());
@@ -84,16 +82,17 @@ public class GamePanel extends javax.swing.JPanel {
             calendarPanel.setSelectedDate(date);
             datePicker.setDate(date);
         }
-      
+
     }
 
     private void ucitajListuGamesa() {
+
         DefaultListModel<Game> m = new DefaultListModel<>();
-        gameObrada.getEntiteti().forEach((s) -> {               
+        gameObrada.getEntiteti().forEach((s) -> {
             m.addElement(s);
+
         });
         lstGames.setModel(m);
-
 
     }
 
@@ -104,17 +103,6 @@ public class GamePanel extends javax.swing.JPanel {
                 ((JTextField) c).setText("");
             }
         }
-    }
-
-    private boolean popuniSvojstva() {
-
-        nbaTeam.setName(txtHomeTeam.getText());
-        nbaTeam.setCity(txtHomeTeam.getText());
-        Date d = Date.from(datePicker.getDate().atStartOfDay(ZoneId.systemDefault()).toInstant());
-        game.setDateofgame(d);
-        ucitajKalendar();
-
-        return true;
     }
 
     private NbaTeam findTeamByName(String name) {
@@ -142,12 +130,13 @@ public class GamePanel extends javax.swing.JPanel {
         cmbHomeTeam = new javax.swing.JComboBox<>();
         cmbAwayTeam = new javax.swing.JComboBox<>();
         jTextField1 = new javax.swing.JTextField();
+        pnlKalendar1 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         lstGames = new javax.swing.JList<>();
         btnObrisi = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        pnlKalendar = new javax.swing.JPanel();
+        txtDatumUtakmice = new javax.swing.JTextField();
 
         pnlPodaci.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 255), 3));
 
@@ -192,6 +181,17 @@ public class GamePanel extends javax.swing.JPanel {
             }
         });
 
+        javax.swing.GroupLayout pnlKalendar1Layout = new javax.swing.GroupLayout(pnlKalendar1);
+        pnlKalendar1.setLayout(pnlKalendar1Layout);
+        pnlKalendar1Layout.setHorizontalGroup(
+            pnlKalendar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 261, Short.MAX_VALUE)
+        );
+        pnlKalendar1Layout.setVerticalGroup(
+            pnlKalendar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 178, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout pnlPodaciLayout = new javax.swing.GroupLayout(pnlPodaci);
         pnlPodaci.setLayout(pnlPodaciLayout);
         pnlPodaciLayout.setHorizontalGroup(
@@ -221,6 +221,10 @@ public class GamePanel extends javax.swing.JPanel {
                     .addComponent(txtAwayTeam)
                     .addComponent(cmbAwayTeam, 0, 114, Short.MAX_VALUE))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPodaciLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pnlKalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35))
         );
         pnlPodaciLayout.setVerticalGroup(
             pnlPodaciLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -242,7 +246,9 @@ public class GamePanel extends javax.swing.JPanel {
                     .addComponent(cmbAwayTeam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnDodajNovi)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(pnlKalendar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         lstGames.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 255), 2, true));
@@ -265,29 +271,19 @@ public class GamePanel extends javax.swing.JPanel {
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sokol/view/juego.png"))); // NOI18N
 
-        javax.swing.GroupLayout pnlKalendarLayout = new javax.swing.GroupLayout(pnlKalendar);
-        pnlKalendar.setLayout(pnlKalendarLayout);
-        pnlKalendarLayout.setHorizontalGroup(
-            pnlKalendarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 229, Short.MAX_VALUE)
-        );
-        pnlKalendarLayout.setVerticalGroup(
-            pnlKalendarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 185, Short.MAX_VALUE)
-        );
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnObrisi, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+                    .addComponent(btnObrisi, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(31, 31, 31)
-                        .addComponent(jLabel4)))
+                        .addComponent(jLabel4))
+                    .addComponent(txtDatumUtakmice))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(78, 78, 78)
@@ -296,10 +292,6 @@ public class GamePanel extends javax.swing.JPanel {
                         .addGap(26, 26, 26)
                         .addComponent(pnlPodaci, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(79, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(pnlKalendar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(189, 189, 189))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -313,19 +305,18 @@ public class GamePanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(8, 8, 8)
+                        .addComponent(txtDatumUtakmice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnObrisi))
                     .addComponent(pnlPodaci, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(pnlKalendar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(24, 30, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDodajNoviActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDodajNoviActionPerformed
 
         Game gaming = new Game();
-
         gaming.setHomeTeamPoints(txtHomeScore.getText());
         gaming.setAwayTeamPoints(txtAwayScore.getText());
 
@@ -334,14 +325,25 @@ public class GamePanel extends javax.swing.JPanel {
 
         gaming.setHometeam(home);
         gaming.setAwayteam(away);
+
+        Date d = Date.from(datePicker.getDate().atStartOfDay(ZoneId.systemDefault()).toInstant());
+        System.out.println("Chosen date is: " + d);
+        gaming.setDateofgame(d);
+        System.out.println("Game for save: " + gaming);
+        if (away.equals(home)) {
+            JOptionPane.showMessageDialog(getRootPane(), "The same team can't play the same game ");
+            return;
+        }
+        
         try {
             gameObrada.dodaj(gaming);
+
             ucitajListuGamesa();
 
         } catch (NbaException ex) {
             Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
-        }
 
+        }
 
     }//GEN-LAST:event_btnDodajNoviActionPerformed
 
@@ -359,7 +361,13 @@ public class GamePanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnObrisiActionPerformed
 
     private void lstGamesValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_lstGamesValueChanged
-        ucitajKalendar();
+        Game selectedGame = lstGames.getSelectedValue();
+
+        System.out.println("Selected game " + selectedGame);
+
+        DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        String formatDatuma = df.format(selectedGame.getDateofgame());
+        txtDatumUtakmice.setText(formatDatuma);
 
     }//GEN-LAST:event_lstGamesValueChanged
 
@@ -392,10 +400,11 @@ public class GamePanel extends javax.swing.JPanel {
     protected javax.swing.JScrollPane jScrollPane3;
     protected javax.swing.JTextField jTextField1;
     protected javax.swing.JList<Game> lstGames;
-    protected javax.swing.JPanel pnlKalendar;
+    protected javax.swing.JPanel pnlKalendar1;
     protected javax.swing.JPanel pnlPodaci;
     protected javax.swing.JTextField txtAwayScore;
     protected javax.swing.JTextField txtAwayTeam;
+    protected javax.swing.JTextField txtDatumUtakmice;
     protected javax.swing.JTextField txtHomeScore;
     protected javax.swing.JTextField txtHomeTeam;
     // End of variables declaration//GEN-END:variables

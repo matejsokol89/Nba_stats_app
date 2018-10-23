@@ -1,7 +1,11 @@
 package sokol.model;
 
+import com.github.lgooddatepicker.components.CalendarPanel;
+import com.github.lgooddatepicker.components.DatePicker;
 import java.io.Serializable;
 import java.math.BigInteger;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -11,6 +15,8 @@ import javax.persistence.OneToOne;
 public class Game extends Entitet implements Serializable {
 
    private Date dateofgame;
+       private CalendarPanel calendarPanel;
+
    private String homeTeamPoints;
    private String awayTeamPoints;
     @ManyToOne
@@ -70,6 +76,8 @@ public class Game extends Entitet implements Serializable {
     public String getCSV() {
         return getAwayteam() + "\t" + getHometeam() + "\t"  + getDateofgame();
     }
+
+
     
 
 }
