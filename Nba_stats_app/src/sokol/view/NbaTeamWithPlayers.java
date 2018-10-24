@@ -384,8 +384,8 @@ public class NbaTeamWithPlayers extends javax.swing.JPanel {
         jLabel2.setText("Condition");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, -1, -1));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sokol/view/2-nba-logos-with-balls-106555.png"))); // NOI18N
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 380, 460, 170));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sokol/view/cutnba.jpg"))); // NOI18N
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 610, 210));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtUvjetKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUvjetKeyPressed
