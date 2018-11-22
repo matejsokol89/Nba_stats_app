@@ -319,6 +319,7 @@ public class GamePanel extends javax.swing.JPanel {
         Game gaming = new Game();
         gaming.setHomeTeamPoints(txtHomeScore.getText());
         gaming.setAwayTeamPoints(txtAwayScore.getText());
+      
 
         NbaTeam away = findTeamByName(txtAwayTeam.getText());
         NbaTeam home = findTeamByName(txtHomeTeam.getText());
@@ -327,9 +328,9 @@ public class GamePanel extends javax.swing.JPanel {
         gaming.setAwayteam(away);
 
         Date d = Date.from(datePicker.getDate().atStartOfDay(ZoneId.systemDefault()).toInstant());
-        System.out.println("Chosen date is: " + d);
+        //System.out.println("Chosen date is: " + d);
         gaming.setDateofgame(d);
-        System.out.println("Game for save: " + gaming);
+        //System.out.println("Game for save: " + gaming);
         if (away.equals(home)) {
             JOptionPane.showMessageDialog(getRootPane(), "The same team can't play the same game ");
             return;
@@ -342,6 +343,7 @@ public class GamePanel extends javax.swing.JPanel {
 
         } catch (NbaException ex) {
             Logger.getLogger(GamePanel.class.getName()).log(Level.SEVERE, null, ex);
+          
 
         }
 
