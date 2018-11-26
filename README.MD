@@ -5,7 +5,7 @@ Nba Stats App is a Java Desktop application made in NetBeans with Hibernate fram
 
 
 
-# Prewiev of work
+# Preview of work
 
 ![](https://media.giphy.com/media/ftewgD3PsPMOBOTEUS/giphy.gif)
 
